@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .myCanvas {
+            width: 300px;
+            height: 150px;
+            border: 1px solid #ff0000;
+
+        }
+    </style>
+</head>
+<body>
+    <canvas class="myCanvas"></canvas>
+
+</body>
+</html>
+<script>
+var c = document.getElementsByClassName('myCanvas')[0];
+var ctx = c.getContext('2d');
+
+ctx.font = '30px Verdana';
+// 创建渐变
+var gradient = ctx.createLinearGradient(0,0,c.width,0);
+gradient.addColorStop('0','magenta');
+gradient.addColorStop('0.5','blue');
+gradient.addColorStop('1',"red");
+// 设置渐变
+ctx.strokeStyle = gradient;
+ctx.strokeText('hello world',10,80);
+
+</script>
